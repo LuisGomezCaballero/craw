@@ -1,0 +1,28 @@
+ <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form th:action="@{/jdbc/comprobar}" method="post">
+    <fieldset>
+        <table>
+<!--             <tr> -->
+<!--                 <td><label th:text="${#strings.defaultString(#messages.msgOrNull('form.jdbc'),'JDBC')}"/></label></td> -->
+<!--                 <td><input type="text" th:field="*{jdbc}" th:errorclass="errorfield"/></td> -->
+<!--             </tr> -->
+            <tr>
+                <td>
+                    <button type="submit">Comprobar</button>
+                </td>
+            </tr>
+        </table>
+        
+        <div th:if="${hayConexion}">
+   			<div>Se ha realizado la conexion correctamente </div>
+		</div>
+    </fieldset>
+</form>
+</body>
+</html>
