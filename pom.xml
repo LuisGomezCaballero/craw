@@ -62,7 +62,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
-
 	<description>Comprobador de Recursos de Aplicaciones Web</description>
 </project>
