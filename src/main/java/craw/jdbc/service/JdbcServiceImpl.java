@@ -25,7 +25,7 @@ public class JdbcServiceImpl implements JdbcService {
 
 		Object response = restTemplate.postForObject(url, param, String.class);
 		
-		System.out.println("comprobarConectividad: " + response);
+		System.out.println("comprobarConectividad : " + response);
 
 		return jdbcDao.comprobarConectividad(paramsBean);
 	}
