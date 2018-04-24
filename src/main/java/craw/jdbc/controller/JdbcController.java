@@ -4,6 +4,7 @@ import java.util.Properties;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -82,23 +83,23 @@ public class JdbcController {
 		return model;
 	}
 
-	@RequestMapping(value = "/comprobarConectividadJSON", method = RequestMethod.POST, produces = "application/json")
+	@PostMapping(value = "/comprobarConectividadJSON", produces = "application/json")
 	public ErrorBean comprobarConectividadJSON() {
 		return jdbcService.comprobarConectividad(paramsBean);
 	}
 
-	@RequestMapping(value = "/comprobarConectividadXML", method = RequestMethod.POST, produces = "application/xml")
+	@PostMapping(value = "/comprobarConectividadXML", produces = "application/xml")
 	public ErrorBean comprobarConectividadXML() {
 		return jdbcService.comprobarConectividad(paramsBean);
 	}
 
-	@RequestMapping(value = "/mostrarMetadatos", method = RequestMethod.POST)
+	@PostMapping(value = "/mostrarMetadatos")
 
 	public ErrorBean mostrarMetadatos() {
 		return jdbcService.mostrarMetadatos(paramsBean);
 	}
 
-	@RequestMapping(value = "/realizarConsulta", method = RequestMethod.POST)
+	@PostMapping(value = "/realizarConsulta")
 	public ErrorBean realizarConsulta() {
 		return jdbcService.realizarConsulta(paramsBean);
 	}
